@@ -1,0 +1,14 @@
+# Dev Environment Overrides
+replicaCount: 1
+
+postgresql:
+  enabled: true
+  database: "idp_db_dev"
+
+resources:
+  limits:
+    cpu: 150m
+    memory: 192Mi
+  requests:
+    cpu: 50m
+    memory: 96Mi

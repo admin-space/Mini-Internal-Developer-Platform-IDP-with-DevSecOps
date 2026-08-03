@@ -1,0 +1,27 @@
+# Prod Environment Overrides
+replicaCount: 3
+
+rollout:
+  enabled: true
+
+# Assume database is provisioned by Terraform in AWS (RDS)
+postgresql:
+  enabled: false
+  host: "prod-rds-db-endpoint.internal"
+  database: "idp_db_prod"
+
+ingress:
+  enabled: true
+  hosts:
+    - host: api.prod.internal.idp
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi

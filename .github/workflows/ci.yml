@@ -1,0 +1,102 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Run unit tests
+        run: |
+          cd backend
+          PYTHONPATH=. pytest
+
+  build-scan-sign:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Lowercase Registry Reference
+        id: prep
+        run: |
+          REPO="${{ github.repository }}"
+          echo "image=ghcr.io/${REPO,,}" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
+        id: build
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ steps.prep.outputs.image }}:${{ github.sha }}, ${{ steps.prep.outputs.image }}:latest
+
+      - name: Run Trivy Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ steps.prep.outputs.image }}:${{ github.sha }}
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL'
+
+      - name: Install Syft
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+
+      - name: Generate SBOM
+        run: |
+          syft ${{ steps.prep.outputs.image }}:${{ github.sha }} -o spdx-json > sbom.spdx.json
+
+      - name: Upload SBOM Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-${{ github.sha }}
+          path: sbom.spdx.json
+
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3.5.0
+
+      - name: Sign Docker Image (Keyless)
+        run: |
+          cosign sign --yes ${{ steps.prep.outputs.image }}@${{ steps.build.outputs.digest }}
+
+      - name: Attest SBOM to Image
+        run: |
+          cosign attest --yes --type spdx --predicate sbom.spdx.json ${{ steps.prep.outputs.image }}@${{ steps.build.outputs.digest }}

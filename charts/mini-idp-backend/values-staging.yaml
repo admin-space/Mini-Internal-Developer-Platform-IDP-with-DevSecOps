@@ -1,0 +1,14 @@
+# Staging Environment Overrides
+replicaCount: 2
+
+postgresql:
+  enabled: true
+  database: "idp_db_staging"
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 384Mi
+  requests:
+    cpu: 100m
+    memory: 192Mi

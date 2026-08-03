@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: backend-network-latency
+  namespace: production
+spec:
+  action: delay
+  mode: all
+  selector:
+    labelSelectors:
+      app.kubernetes.io/name: mini-idp-backend
+  delay:
+    latency: '150ms'
+    correlation: '100'
+  duration: '30s'
+  scheduler:
+    cron: '@every 5m'

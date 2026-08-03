@@ -1,0 +1,209 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "installedAt": "2026-06-10T10:47:55.584Z",
+      "updatedAt": "2026-06-10T10:47:55.584Z"
+    },
+    "multi-stage-dockerfile": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/multi-stage-dockerfile/SKILL.md",
+      "skillFolderHash": "c48773c7887197168099307c60b5dab2a553259c",
+      "installedAt": "2026-08-01T18:59:56.808Z",
+      "updatedAt": "2026-08-01T18:59:56.808Z"
+    },
+    "kubernetes-specialist": {
+      "source": "jeffallan/claude-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jeffallan/claude-skills.git",
+      "skillPath": "skills/kubernetes-specialist/SKILL.md",
+      "skillFolderHash": "1fd237eca6b32f079d575ee6e441669c77f0f226",
+      "installedAt": "2026-08-01T19:00:10.970Z",
+      "updatedAt": "2026-08-01T19:00:10.970Z"
+    },
+    "helm-chart-scaffolding": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/kubernetes-operations/skills/helm-chart-scaffolding/SKILL.md",
+      "skillFolderHash": "8a5e3f83074c1616ceabcdb3dca007cc56a4a2e5",
+      "installedAt": "2026-08-01T19:00:31.997Z",
+      "updatedAt": "2026-08-01T19:00:31.997Z"
+    },
+    "terraform-module-library": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/cloud-infrastructure/skills/terraform-module-library/SKILL.md",
+      "skillFolderHash": "06e4f4e3295990a5829735db832044925a85e222",
+      "installedAt": "2026-08-01T19:00:44.234Z",
+      "updatedAt": "2026-08-01T19:00:44.234Z"
+    },
+    "github-actions-templates": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/cicd-automation/skills/github-actions-templates/SKILL.md",
+      "skillFolderHash": "45afea1bc88e191b522b07833a14e979c3653f74",
+      "installedAt": "2026-08-01T19:00:54.527Z",
+      "updatedAt": "2026-08-01T19:00:54.527Z"
+    },
+    "gitops-workflow": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md",
+      "skillFolderHash": "a3cb91f413faff1d3715c45cb4baf8338adaa039",
+      "installedAt": "2026-08-01T19:01:10.735Z",
+      "updatedAt": "2026-08-01T19:01:10.735Z"
+    },
+    "argocd-expert": {
+      "source": "personamanagmentlayer/pcl",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/personamanagmentlayer/pcl.git",
+      "skillPath": "stdlib/devops/argocd-expert/SKILL.md",
+      "skillFolderHash": "c5745b05d0923a3d81706bf50d04ca84a8321b01",
+      "installedAt": "2026-08-01T19:01:29.883Z",
+      "updatedAt": "2026-08-01T19:01:29.883Z"
+    },
+    "secrets-vault-manager": {
+      "source": "alirezarezvani/claude-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/alirezarezvani/claude-skills.git",
+      "skillPath": "engineering/skills/secrets-vault-manager/SKILL.md",
+      "skillFolderHash": "c64df0d6e96d4d39756c95b347bfdc80822ae716",
+      "installedAt": "2026-08-01T19:02:24.076Z",
+      "updatedAt": "2026-08-01T19:02:24.076Z"
+    },
+    "devsecops-expert": {
+      "source": "martinholovsky/claude-skills-generator",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/martinholovsky/claude-skills-generator.git",
+      "skillPath": "skills/devsecops-expert/SKILL.md",
+      "skillFolderHash": "60a8daa878f2dfc0352f035e49a53a913132346a",
+      "installedAt": "2026-08-01T19:02:38.705Z",
+      "updatedAt": "2026-08-01T19:02:38.705Z"
+    },
+    "scanning-docker-images-with-trivy": {
+      "source": "mukul975/anthropic-cybersecurity-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mukul975/anthropic-cybersecurity-skills.git",
+      "skillPath": "skills/scanning-docker-images-with-trivy/SKILL.md",
+      "skillFolderHash": "879bbbec5a9a64e0afcc10fad447ca18bc9817c5",
+      "installedAt": "2026-08-01T19:03:31.752Z",
+      "updatedAt": "2026-08-01T19:03:31.752Z"
+    },
+    "artifact-sbom-publisher": {
+      "source": "patricio0312rev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/patricio0312rev/skills.git",
+      "skillPath": "ci-cd/artifact-sbom-publisher/SKILL.md",
+      "skillFolderHash": "054ee3cc4dfca998e4dc674365b0b58944a5dc3b",
+      "installedAt": "2026-08-01T19:03:45.561Z",
+      "updatedAt": "2026-08-01T19:03:45.561Z"
+    },
+    "implementing-image-provenance-verification-with-cosign": {
+      "source": "mukul975/anthropic-cybersecurity-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mukul975/anthropic-cybersecurity-skills.git",
+      "skillPath": "skills/implementing-image-provenance-verification-with-cosign/SKILL.md",
+      "skillFolderHash": "46f1301c6e18b78ea20670c96b1bf6e0b28181d9",
+      "installedAt": "2026-08-01T19:04:29.897Z",
+      "updatedAt": "2026-08-01T19:04:29.897Z"
+    },
+    "implementing-opa-gatekeeper-for-policy-enforcement": {
+      "source": "mukul975/anthropic-cybersecurity-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mukul975/anthropic-cybersecurity-skills.git",
+      "skillPath": "skills/implementing-opa-gatekeeper-for-policy-enforcement/SKILL.md",
+      "skillFolderHash": "6307d9b72d897bfbbe60825fb4e8eb7db4ee0eec",
+      "installedAt": "2026-08-01T19:05:14.258Z",
+      "updatedAt": "2026-08-01T19:05:14.258Z"
+    },
+    "prometheus-configuration": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/observability-monitoring/skills/prometheus-configuration/SKILL.md",
+      "skillFolderHash": "4a7d20c931d195fcbf0d35261c5b8c4851a665ea",
+      "installedAt": "2026-08-01T19:05:49.141Z",
+      "updatedAt": "2026-08-01T19:05:49.141Z"
+    },
+    "grafana-dashboards": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/observability-monitoring/skills/grafana-dashboards/SKILL.md",
+      "skillFolderHash": "2d667b90e0be300db3dd576ffe40451b8c2e810e",
+      "installedAt": "2026-08-01T19:05:59.992Z",
+      "updatedAt": "2026-08-01T19:05:59.992Z"
+    },
+    "loki": {
+      "source": "grafana/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/grafana/skills.git",
+      "skillPath": "skills/grafana-lgtm/loki/SKILL.md",
+      "skillFolderHash": "eb7b299e3a84bc103dbc1ce767a4afd4492ad843",
+      "pluginName": "grafana-lgtm",
+      "installedAt": "2026-08-01T19:06:10.057Z",
+      "updatedAt": "2026-08-01T19:06:10.057Z"
+    },
+    "tempo": {
+      "source": "grafana/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/grafana/skills.git",
+      "skillPath": "skills/grafana-lgtm/tempo/SKILL.md",
+      "skillFolderHash": "8003617369f62d3b9b886c4d9e9ad68c5cdc9dc1",
+      "pluginName": "grafana-lgtm",
+      "installedAt": "2026-08-01T19:06:23.388Z",
+      "updatedAt": "2026-08-01T19:06:23.388Z"
+    },
+    "platform-engineering": {
+      "source": "bagelhole/devops-security-agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/bagelhole/devops-security-agent-skills.git",
+      "skillPath": "devops/platforms/platform-engineering/SKILL.md",
+      "skillFolderHash": "ea7b681c7dc3814c2189aebc3aa8893d1e25b02a",
+      "installedAt": "2026-08-01T19:06:42.021Z",
+      "updatedAt": "2026-08-01T19:06:42.021Z"
+    },
+    "fastapi-templates": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/api-scaffolding/skills/fastapi-templates/SKILL.md",
+      "skillFolderHash": "87c553f9f78dd6ccd352572058b947886d0b9052",
+      "installedAt": "2026-08-01T19:07:02.647Z",
+      "updatedAt": "2026-08-01T19:07:02.647Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "antigravity-cli",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed",
+    "claude-code",
+    "openclaw",
+    "kilo",
+    "continue"
+  ]
+}

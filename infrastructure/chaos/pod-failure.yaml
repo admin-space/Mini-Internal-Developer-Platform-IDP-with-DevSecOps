@@ -1,0 +1,14 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: backend-pod-failure
+  namespace: production
+spec:
+  action: pod-failure
+  mode: one
+  selector:
+    labelSelectors:
+      app.kubernetes.io/name: mini-idp-backend
+  duration: '30s'
+  scheduler:
+    cron: '@every 2m'

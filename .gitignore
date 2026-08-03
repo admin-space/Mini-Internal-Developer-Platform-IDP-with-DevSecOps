@@ -1,0 +1,17 @@
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+
+# Secrets / env
+.env
+*.pem
+*.key
+kubeconfig
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.swp

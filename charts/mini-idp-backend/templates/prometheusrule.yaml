@@ -1,0 +1,31 @@
+{{- if .Values.prometheusRule.enabled -}}
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: {{ include "mini-idp-backend.fullname" . }}-alerts
+  labels:
+    {{- include "mini-idp-backend.labels" . | nindent 4 }}
+    {{- with .Values.prometheusRule.additionalLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  groups:
+    - name: mini-idp-backend.rules
+      rules:
+        - alert: MiniIDPBackendDown
+          expr: up{job="{{ include "mini-idp-backend.fullname" . }}"} == 0
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Mini IDP Backend is down"
+            description: "The backend service has been unavailable for more than 1 minute."
+        - alert: HighErrorRate
+          expr: sum(rate(app_requests_total{http_status=~"5.."}[2m])) / sum(rate(app_requests_total[2m])) > 0.05
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "High HTTP 5xx error rate"
+            description: "Backend HTTP 5xx error rate is above 5%."
+{{- end }}
