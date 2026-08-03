@@ -30,7 +30,8 @@ spec:
                   period: 24h
           singleBinary:
             replicas: 1
-  destination:
+          deploymentMode: SingleBinary
+ destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
   syncPolicy:
