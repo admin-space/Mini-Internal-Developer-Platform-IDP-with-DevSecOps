@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/myorg/mini-idp.git
+    repoURL: https://github.com/admin-space/Mini-Internal-Developer-Platform-IDP-with-DevSecOps.git
     targetRevision: main
     path: charts/mini-idp-backend
     helm:
