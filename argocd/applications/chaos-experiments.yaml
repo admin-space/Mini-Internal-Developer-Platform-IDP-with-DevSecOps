@@ -13,7 +13,7 @@ spec:
     path: infrastructure/chaos
   destination:
     server: https://kubernetes.default.svc
-    namespace: production
+    namespace: prod
   syncPolicy:
     automated:
       prune: true

@@ -2,7 +2,7 @@ apiVersion: chaos-mesh.org/v1alpha1
 kind: PodChaos
 metadata:
   name: backend-pod-failure
-  namespace: production
+  namespace: prod
 spec:
   action: pod-failure
   mode: one
