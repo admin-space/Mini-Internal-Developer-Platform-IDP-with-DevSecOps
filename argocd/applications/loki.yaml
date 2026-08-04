@@ -1,3 +1,4 @@
+cat > argocd/applications/loki.yaml << 'EOF'
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -31,7 +32,7 @@ spec:
           singleBinary:
             replicas: 1
           deploymentMode: SingleBinary
- destination:
+  destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
   syncPolicy:
@@ -40,3 +41,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+EOF
