@@ -15,3 +15,6 @@ resources:
 # Enable Argo Rollouts canary deployment for staging demo
 rollout:
   enabled: true
+# Trigger new rollout revision
+image:
+  tag: "v2"

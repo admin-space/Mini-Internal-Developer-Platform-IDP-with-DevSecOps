@@ -48,7 +48,7 @@ def health(db: Session = Depends(get_db)):
     try:
         # Perform a simple check query
         db.execute(Base.metadata.tables["items"].select().limit(1))
-        return {"status": "healthy", "database": "connected"}
+        return {"status": "healthy", "database": "connected", "version": "v2"}
     except Exception as e:
         raise HTTPException(status_code=503, detail=f"Database connection failed: {str(e)}")
 
