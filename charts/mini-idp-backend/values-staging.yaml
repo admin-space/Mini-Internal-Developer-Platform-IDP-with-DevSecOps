@@ -12,3 +12,6 @@ resources:
   requests:
     cpu: 100m
     memory: 192Mi
+# Enable Argo Rollouts canary deployment for staging demo
+rollout:
+  enabled: true
