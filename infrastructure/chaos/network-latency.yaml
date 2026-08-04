@@ -2,7 +2,7 @@ apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
 metadata:
   name: backend-network-latency
-  namespace: prod
+  namespace: staging
 spec:
   action: delay
   mode: all
