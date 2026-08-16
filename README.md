@@ -74,6 +74,7 @@ The rollout progressed through defined canary steps (10% → pause → 50% → 1
 
 ## Demo: Chaos Engineering
 
+![Chaos Experiment CPU Spike](./docs/images/chaos-recovery.png)
 Chaos Mesh experiments were deployed against the staging environment to validate resilience.
 
 **Pod Failure Experiment — Verified Result:**
