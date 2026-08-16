@@ -74,12 +74,19 @@ The rollout progressed through defined canary steps (10% → pause → 50% → 1
 
 ## Demo: Chaos Engineering
 
-Chaos Mesh experiments were deployed against the staging environment to validate resilience:
+Chaos Mesh experiments were deployed against the staging environment to validate resilience.
 
-- **Pod Failure** — kills a backend pod every 2 minutes; Kubernetes automatically reschedules a replacement. Confirmed via pod restart count and recovery time.
-- **Network Latency** — injects 150ms delay to simulate degraded network conditions and test timeout handling.
+**Pod Failure Experiment — Verified Result:**
 
-*(Screenshots/evidence to be added here: before/during/after Grafana dashboards, Alertmanager firing, and pod recovery timeline.)*
+Experiment: backend-pod-failure
+Target: mini-idp-staging-mini-idp-backend-5d9c84647d-9dnpr
+Applied: 2026-08-10T21:45:53Z (pod failure injected)
+Recovered: 2026-08-10T21:46:23Z (Kubernetes auto-recovered)
+Recovery time: 30 seconds
+Status: AllRecovered=True, AllInjected=False
+
+
+Kubernetes successfully detected and recovered from the injected pod failure within 30 seconds, with zero manual intervention — validating the self-healing behavior of the platform.
 
 ## Known Issues
 
